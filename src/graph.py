@@ -5,7 +5,7 @@ def create_graph(edges: list[tuple[int, int]]):
     G.add_edges_from(edges)
     return G
 
-def get_degree(G: nx.Graph, node: int) -> int:
+def get_degree(G: nx.Graph, node: int):
     return G.degree(node)
 
 
