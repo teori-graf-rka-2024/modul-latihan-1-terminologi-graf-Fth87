@@ -1,6 +1,6 @@
 import networkx as nx
 
-def create_graph(edges: list[tuple[int, int]]) -> nx.Graph:
+def create_graph(edges: list[tuple[int, int]]):
     G = nx.Graph()
     G.add_edges_from(edges)
     return G
@@ -9,7 +9,7 @@ def get_degree(G: nx.Graph, node: int) -> int:
     return G.degree(node)
 
 
-def dfs_traversal(G: nx.Graph, start: int) -> list[int]:
+def dfs_traversal(G: nx.Graph, start: int):
     visited = set()  
     result = []  
     def dfs(node):
@@ -24,7 +24,7 @@ def dfs_traversal(G: nx.Graph, start: int) -> list[int]:
 
 from collections import deque
 
-def bfs_traversal(G: nx.Graph, start: int) -> list[int]:
+def bfs_traversal(G: nx.Graph, start: int):
     visited = set()  
     queue = deque([start])  
     result = []  
@@ -39,7 +39,7 @@ def bfs_traversal(G: nx.Graph, start: int) -> list[int]:
 
     return result
 
-def find_shortest_path(G: nx.Graph, source: int, target: int) -> list[int]:
+def find_shortest_path(G: nx.Graph, source: int, target: int):
     try:
         return nx.shortest_path(G, source=source, target=target)
     except nx.NetworkXNoPath:
